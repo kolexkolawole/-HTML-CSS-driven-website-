@@ -1,0 +1,208 @@
+/* load icon font from google */
+/* so you can use icons like special characters */
+/* @import statement MUST be before other CSS statement */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+/* reset default */
+* {
+  margin: 0;
+  padding: 0;
+/* redefine width to include padding and border, instead of only content area   */
+  box-sizing: border-box;
+}
+
+.header {
+  /* TODO make header occupy the whole row with display block */
+  /* TODO make width 100% */
+  /* TODO text align right   */
+  display: block;
+  width: 100%;
+  text-align: right;
+  /* rgba function for red/green/blue/transparency   */
+  background-color: rgba(0,0,0,0.8);  
+}
+
+
+/* for simplicity, we ignore search for this exercise */
+.header > .search {
+  /* TODO use display none to hide search module */
+  display: none;
+}
+
+/* IMPORTANT: multiple selector statements separated by comma */
+/* It is equivalent to have each separately with same {} body */
+/* hide checkbox and label */
+.header > input, 
+.header > label 
+{
+  /* TODO use display none to hide */
+  display: none;
+}
+
+.header > .nav {
+  /* TODO make navbar display inline-block */
+  /* TODO make width 100%   */
+  /* TODO make padding 16px */
+  display: inline-block;
+  width: 100%;
+  padding: 0 0 5px 0;
+}
+
+.header > .nav > .quick-access {
+  /* TODO make user-group links and quick-access links share with row using inline-block  */
+  /* TODO make quick-access width 30% */
+  /* TODO text align left   */
+  display: inline-block;
+  text-align: right;
+  padding: 50px 20px 0 0;
+
+}
+
+.header > .nav > .quick-access > li, 
+.header > .nav > .user-group > li 
+{
+  /* TODO make links side by side using inline-block */
+  /* TODO make left/right padding 4px */
+  display: inline-block;
+  
+  
+  padding: 0 7px;
+
+
+}
+
+.header > .nav > .quick-access > li > a, 
+.header > .nav > .user-group > li > a 
+{
+  /* TODO make all text color white */
+  /* TODO set font type sans-serif */
+  /* TODO set font size smaller 75% */
+  /* TODO set texts to be uppercase */
+  /* TODO remove underline */
+color: white;
+font-family: sans-serif;
+font-size: 100%;  
+text-transform: uppercase;
+text-decoration: none;
+  
+}
+
+/* add code for screen less than 700px */
+@media (max-width: 700px) {
+  
+  .header > #nav + label + .nav {
+    /* TODO hide the navbar when checkbox is unchekced, using display: none */
+    /* TODO set width 320px and padding 16px   */
+    display: none;
+    width: 320px;
+    padding: 16px;
+    background-color: lightgrey;
+  }
+
+  /* the key here is the :checked selector which only select checkbox when it is checked */
+  .header > #nav:checked + label + .nav {
+    /* TODO show navbar when checkbox is checked, using display: block */
+    display: block;
+  }
+
+  /* use bottom border to implement the seperator line */
+  .header > .nav > .quick-access {
+    /* TODO user-group does not share row with anyone, using display: block   */
+    /* TODO set its width 100%   */    
+    /* TODO align text on the center   */
+display: block;
+width: 100%;
+text-align: center;
+    /* use border as separator line */
+    border: 1px dotted grey;
+  /* only render bottom border by setting border-width: 0 for all other sides   */
+    border-width: 0 0 1px 0;
+  }
+
+  .header > .nav > .quick-access > li {
+    /* TODO place quick-acess links horizontally, using display: inline-block */
+    /* TODO add margin top/right/bottom/left with 0/4px/16px/4px */
+    display: inline-block;
+    margin: 0 4px 16px 4px;
+  }
+
+  .header > .nav > .user-group {
+    /* TODO user-group does not share row with anyone, using display: block   */
+    /* TODO set its width 100%   */
+    /* TODO align text on the left   */
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .header > .nav > .user-group > li {
+    /* TODO place user-group links vertically, using display: block */
+    /* TODO add margin top/right/bottom/left with 16px/4px/0/12px */
+    /* TODO make font larger 130%    */
+    display: block;
+    margin: 16px 4px 0 12px;
+    font-size: 130%;
+  }  
+
+  /* TODO dropdown overlap other content. Use position   */
+  .header > .nav {
+    /* TODO position absolute */
+    /* TODO top/right as 48px/0     */
+    /* TODO z-index 100     */
+    /* TODO text align to left */
+    position: absolute;
+    top: 48px;
+    right: 0;
+    z-index: 100;
+    text-align: left;
+  }   
+
+  /* make label as icon   */
+  .header > label {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    padding: 16px;
+
+    color: white;
+  }
+
+  /* change text color to be black   */
+  .header > .nav > .quick-access > li > a,
+  .header > .nav > .user-group > li > a 
+  {
+    color: black;
+  }
+}
+
+.picture {
+  width: 100%;
+  height: 100px;
+  padding: 100px;
+  position: relative;
+  background-color: white;
+  background-image: url(https://images.pexels.com/photos/5668869/pexels-photo-5668869.jpeg?cs=srgb&dl=pexels-sora-shimazaki-5668869.jpg&fm=jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.contact {
+  height: 300px;
+  width: 100%;
+  text-align: left;
+  padding: 1em;
+ }
+.personal {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  vertical-align: left;
+}
+  .company {
+  width: 300px;
+  height: 400px;
+  float: right;
+  padding: 0 50px 0 0;
+  text-align: left;
+}
